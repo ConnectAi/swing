@@ -65,7 +65,8 @@ Card = (stack, targetElement) => {
             ]
         });
 
-        Card.appendToParent(targetElement);
+        // Card.appendToParent(targetElement);
+        Card.prependToParent(targetElement);
 
         eventEmitter.on('panstart', () => {
             Card.appendToParent(targetElement);
@@ -392,6 +393,15 @@ Card.appendToParent = (element) => {
         parentNode.removeChild(element);
         parentNode.appendChild(element);
     }
+};
+
+Card.prependToParent = (element) => {
+    let parentNode;
+
+    parentNode = element.parentNode;
+
+    parentNode.removeChild(element);
+    parentNode.insertBefore(element, parentNode.firstChild);
 };
 
 /**
