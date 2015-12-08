@@ -69,7 +69,7 @@ Card = (stack, targetElement) => {
         Card.prependToParent(targetElement);
 
         eventEmitter.on('panstart', () => {
-            Card.appendToParent(targetElement);
+            // Card.appendToParent(targetElement);
 
             eventEmitter.trigger('dragstart', {
                 target: targetElement
